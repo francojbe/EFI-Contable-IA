@@ -48,6 +48,10 @@ def get_relevant_docs(query: str, limit: int = 4):
     
     return rpc_response.data
 
+@app.get("/")
+async def root():
+    return {"status": "ok", "message": "EFI Backend API is running successfully."}
+
 @app.post("/chat")
 async def chat(request_data: ChatRequest, req: Request):
     try:
