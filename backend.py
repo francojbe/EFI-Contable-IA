@@ -180,7 +180,7 @@ async def save_lead(request_data: LeadRequest, req: Request):
         supabase.table("leads").insert({
             "name": request_data.nombre,
             "email": request_data.email,
-            "phone_number": request_data.phone,
+            "phone": request_data.phone,
             "ip_address": client_ip
         }).execute()
         return {"status": "success"}
